@@ -1,3 +1,6 @@
+package cipher;
+
+
 import java.util.Scanner;
 
 public class CaeserCipher {
@@ -21,13 +24,13 @@ public class CaeserCipher {
                 alphabet = (char) (alphabet + shift);
                 if (alphabet > 'Z'){
                     alphabet = (char) (alphabet + 'A' - 'Z' - 1);
+                }
+                ciphertext = ciphertext + alphabet;
             }
-            ciphertext = ciphertext + alphabet;
+            else{
+                ciphertext = ciphertext + alphabet;
+            }
+            System.out.println("Cipher text " + ciphertext);
         }
-        else{
-            ciphertext = ciphertext + alphabet;
-        }
-        System.out.println("Cipher text " + ciphertext);
-    }
     }
 }

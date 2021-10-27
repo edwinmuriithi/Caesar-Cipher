@@ -11,7 +11,7 @@ public class CaeserCipherTest {
 
     @Test
     @DisplayName("CaeserCipher Initiates Correctly")
-    void main() {
+    public void caeserCipher_initiatesCorrectly() {
       CaeserCipherTest caeserCipherTest = new CaeserCipherTest();
         assertFalse(!(caeserCipherTest instanceof CaeserCipher));
     }

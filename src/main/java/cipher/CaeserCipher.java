@@ -6,13 +6,13 @@ public class CaeserCipher {
 
     static String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-    public static String encrypt(String pText, int Key){
+    public static String encrypt(String pText, int shift){
         pText = pText.toLowerCase();
         String cText = "";
         for(int i = 0; i<pText.length(); i++){
             int charIndex = alphabet.indexOf(pText.charAt(i));
-            int newIndex = (charIndex + Key) % 26;
-            char cipherChar = alphabet.charAt(newIndex);
+            int shiftIndex = (charIndex + shift) % 26;
+            char cipherChar = alphabet.charAt(shiftIndex);
             cText = cText + cipherChar;
         }
 
@@ -20,50 +20,37 @@ public class CaeserCipher {
 
     }
 
-    public static String decrypt(String cText, int Key){
+    public static String decrypt(String cText, int shift){
         cText = cText.toLowerCase();
         String pText = "";
         for (int i = 0; i<cText.length(); i++){
             int charIndex = alphabet.indexOf(cText.charAt(i));
-            int newIndex = (charIndex - Key) % 26;
-            if (newIndex < 0){
-                newIndex = alphabet.length() + newIndex;
+            int shiftIndex = (charIndex - shift) % 26;
+            if (shiftIndex < 0){
+                shiftIndex = alphabet.length() + shiftIndex;
             }
-            char plainChar = alphabet.charAt(newIndex);
+            char plainChar = alphabet.charAt(shiftIndex);
             pText = pText + plainChar;
         }
-
 
         return pText;
     }
 
     public static void main(String arg[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Message");
-        String plaintext = sc.nextLine();
-        System.out.println("Number to be shifted");
+
+        System.out.print("Enter Message");
+        String plainText = sc.nextLine();
+
+        System.out.print("Number to be Shifted");
         int shift = sc.nextInt();
-        String ciphertext = "";
-        char alphabet;
-        for (int i = 0; i < plaintext.length(); i++) {
-            alphabet = plaintext.charAt(i);
-            if (alphabet >= 'a' && alphabet >= 'z') {
-                alphabet = (char) (alphabet + shift);
-                if (alphabet > 'z') {
-                    alphabet = (char) (alphabet + 'a' - 'z' - 1);
-                }
-                ciphertext = ciphertext + alphabet;
-            } else if (alphabet >= 'A' && alphabet <= 'Z') {
-                alphabet = (char) (alphabet + shift);
-                if (alphabet > 'Z'){
-                    alphabet = (char) (alphabet + 'A' - 'Z' - 1);
-                }
-                ciphertext = ciphertext + alphabet;
-            }
-            else{
-                ciphertext = ciphertext + alphabet;
-            }
-            System.out.println("Cipher text " + ciphertext);
+
+        String cipherText = encrypt(plainText, shift);
+
+        System.out.println("The encrypted message is " + cipherText);
+
+        System.out.println("The decrypted message is" + decrypt(cipherText,shift));
+
+
         }
     }
-}

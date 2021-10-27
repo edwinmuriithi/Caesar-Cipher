@@ -31,3 +31,26 @@ with a shift of 1, A would be replaced by B, B would become C, and so on.
 8. Your message will then be encrypted and shown below together with the 
    decrypted message.
 
+## Technologies Used
+* JAVA Language
+
+## Known Bugs
+No known bugs at this point
+
+## Contact Information
+* Edwin Muriithi - kabuimuriithi@gmail.com
+* https://github.com/edwinmuriithi/Caesar-Cipher
+
+
+## Version History
+* Final Commit
+* Addition of various Styles and Features
+* Initial Commit
+
+## Licence
+* Distributed under the MIT License. See LICENSE for more information.
+
+## Acknowledgements
+* Technical Mentor
+* Fellow classmates
+* Github

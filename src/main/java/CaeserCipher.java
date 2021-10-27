@@ -17,17 +17,17 @@ public class CaeserCipher {
                     alphabet = (char) (alphabet + 'a' - 'z' - 1);
                 }
                 ciphertext = ciphertext + alphabet;
-            }
-            else if (alphabet >= 'A' && alphabet <= = 'Z') {
+            } else if (alphabet >= 'A' && alphabet <= 'Z') {
                 alphabet = (char) (alphabet + shift);
-                if (alphabet > 'Z')
+                if (alphabet > 'Z'){
                     alphabet = (char) (alphabet + 'A' - 'Z' - 1);
             }
             ciphertext = ciphertext + alphabet;
-
+        }
         else{
             ciphertext = ciphertext + alphabet;
         }
-        System.out.println("Cipher text" + ciphertext);
-    }}
+        System.out.println("Cipher text " + ciphertext);
+    }
+    }
 }

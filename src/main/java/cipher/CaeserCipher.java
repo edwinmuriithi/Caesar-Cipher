@@ -4,6 +4,23 @@ import java.util.Scanner;
 
 public class CaeserCipher {
 
+    public static void main(String arg[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Message");
+        String plainText = sc.nextLine();
+
+        System.out.print("Number to be Shifted");
+        int shift = sc.nextInt();
+
+        String cipherText = encrypt(plainText, shift);
+
+        System.out.println("The encrypted message is " + cipherText);
+
+        System.out.println("The decrypted message is " + decrypt(cipherText,shift));
+
+
+    }
     static String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     public static String encrypt(String pText, int shift){
@@ -36,21 +53,5 @@ public class CaeserCipher {
         return pText;
     }
 
-    public static void main(String arg[]) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter Message");
-        String plainText = sc.nextLine();
-
-        System.out.print("Number to be Shifted");
-        int shift = sc.nextInt();
-
-        String cipherText = encrypt(plainText, shift);
-
-        System.out.println("The encrypted message is " + cipherText);
-
-        System.out.println("The decrypted message is" + decrypt(cipherText,shift));
-
-
-        }
     }

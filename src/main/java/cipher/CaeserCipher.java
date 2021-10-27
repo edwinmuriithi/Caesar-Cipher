@@ -1,9 +1,17 @@
 package cipher;
 
-
 import java.util.Scanner;
 
 public class CaeserCipher {
+
+    public static String encrypt(){
+
+    }
+
+    public static String decrypt(){
+
+
+    }
     public static void main(String arg[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Message");
